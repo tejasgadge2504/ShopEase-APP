@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "906802971217",
+    "project_id": "shopease-be4b3",
+    "storage_bucket": "shopease-be4b3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:906802971217:android:4076eb45503f941e922e70",
+        "android_client_info": {
+          "package_name": "com.teaminspire.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDHskwzb-C5CaW0zRAdcIbVuNUWlud6fto"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
