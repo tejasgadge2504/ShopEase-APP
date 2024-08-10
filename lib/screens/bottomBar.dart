@@ -24,7 +24,7 @@ class _appBottomState extends State<appBottom> {
   void initState() {
     super.initState();
     _widgetsOptions = <Widget>[
-      cartPage(),
+      CartPage(),
       historyPage(),
       couponsPage(),
       mapPage()// Pass users data to HomePage

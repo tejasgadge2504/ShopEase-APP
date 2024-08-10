@@ -2,7 +2,7 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 
 class ApiService {
-  final String apiUrl = "https://docs.google.com/spreadsheets/d/1jkaMQzG8JbFSd3d2OpKSn51zgj5tswOIHQFSaHPhRJQ/edit?usp=sharing"; // Replace with your Google Sheets API URL
+  final String apiUrl = "https://script.google.com/macros/s/AKfycbxnQFVlIAm-Po-uJaIx7-9l5TICXYjgwdf_vFyOU-gyqVag4CaDUc5TvCl7pjvcMQvJ/exec"; // Replace with your Google Sheets API URL
 
   Future<List<Map<String, dynamic>>> fetchProducts() async {
     try {
