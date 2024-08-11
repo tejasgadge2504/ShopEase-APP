@@ -6,7 +6,8 @@ class mapPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Text("Maps"),
+      body: Center(
+          child: Image.asset('asstes/images/map.jpg')),
     );
   }
 }

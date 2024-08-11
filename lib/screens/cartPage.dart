@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 
 import '../request/apiService.dart';
 
-
 class CartPage extends StatefulWidget {
   const CartPage({super.key});
 
@@ -23,7 +22,7 @@ class _CartPageState extends State<CartPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Cart Page'),
+        // title: Text('Cart Page'),
       ),
       body: FutureBuilder<List<Map<String, dynamic>>>(
         future: _products,
@@ -36,15 +35,31 @@ class _CartPageState extends State<CartPage> {
             return Center(child: Text('No products available'));
           } else {
             final products = snapshot.data!;
-            return ListView.builder(
-              itemCount: products.length,
-              itemBuilder: (context, index) {
-                final product = products[index];
-                return ListTile(
-                  title: Text(product['ProductName'] ?? 'Unknown'),
-                  subtitle: Text('Price: \$${product['PricePerItem'] ?? 0}, Amount: ${product['Amount'] ?? 0}'),
-                );
-              },
+            final totalPrice = products.fold<double>(
+              0.0,
+                  (sum, product) => sum + (product['PricePerItem']),
+            );
+            return Column(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.all(16.0),
+                  child: Text(
+                    'Total Price: \$${totalPrice.toStringAsFixed(2)}',
+                  ),
+                ),
+                Expanded(
+                  child: ListView.builder(
+                    itemCount: products.length,
+                    itemBuilder: (context, index) {
+                      final product = products[index];
+                      return ListTile(
+                        title: Text(product['ProductName'] ?? 'Unknown'),
+                        subtitle: Text('Price: \$${product['PricePerItem'] ?? 0}, Amount: ${product['Amount'] ?? 0}'),
+                      );
+                    },
+                  ),
+                ),
+              ],
             );
           }
         },

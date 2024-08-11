@@ -47,7 +47,9 @@ class _appBottomState extends State<appBottom> {
         backgroundColor: appBarColor,
         title: Row(
           children: [
-            Text("ShopEase"),
+            Text("WRIST",style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold),),
+            Text("LIST",style: TextStyle(color: Colors.orangeAccent,fontWeight: FontWeight.bold),),
+
             SizedBox(width: size.width*0.6,),
             InkWell(
               onTap: (){
