@@ -54,7 +54,12 @@ class _CartPageState extends State<CartPage> {
                       final product = products[index];
                       return ListTile(
                         title: Text(product['ProductName'] ?? 'Unknown'),
-                        subtitle: Text('Price: \$${product['PricePerItem'] ?? 0}, Amount: ${product['Amount'] ?? 0}'),
+                        subtitle: Column(
+                          children: [
+                            Text('Price: \$${product['Amount'] ?? 0}, ProductID: ${product['ProductID'] ?? 0}'),
+                            Text('SectionNo. ${product['SectionNo'] ?? 0}- ${product['SectionWard']}')
+                          ],
+                        ),
                       );
                     },
                   ),
