@@ -3,7 +3,9 @@ import 'package:flutter/material.dart';
 import '../request/apiService.dart';
 
 class CartPage extends StatefulWidget {
-  const CartPage({super.key});
+  final String url;
+
+  const CartPage({super.key, required this.url});
 
   @override
   State<CartPage> createState() => _CartPageState();
@@ -15,7 +17,7 @@ class _CartPageState extends State<CartPage> {
   @override
   void initState() {
     super.initState();
-    _products = ApiService().fetchProducts(); // Fetch data on initialization
+    _products = ApiService().fetchProducts(widget.url); // Fetch data on initialization
   }
 
   @override

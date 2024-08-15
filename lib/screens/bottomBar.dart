@@ -5,6 +5,7 @@ import 'package:shopease/screens/historyPage.dart';
 import 'package:shopease/screens/mapPage.dart';
 import 'package:shopease/screens/profilePage.dart';
 
+import '../request/qrScannerPage.dart';
 import '../src/colors.dart';
 
 class appBottom extends StatefulWidget {
@@ -24,7 +25,7 @@ class _appBottomState extends State<appBottom> {
   void initState() {
     super.initState();
     _widgetsOptions = <Widget>[
-      CartPage(),
+      QRScannerPage(),
       historyPage(),
       couponsPage(),
       mapPage()// Pass users data to HomePage
