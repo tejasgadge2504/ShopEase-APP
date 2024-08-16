@@ -30,8 +30,8 @@ class historyPage extends StatelessWidget {
                   children: [
                     Row(
                       children: [
-                        Icon(Icons.attach_money_rounded,color: Colors.white,),
-                        Text("1450",style: TextStyle(color: Colors.white,fontSize: 16,fontWeight: FontWeight.bold),),
+                        // Icon(Icons.attach_money_rounded,color: Colors.white,),
+                        Text("₹ 1450",style: TextStyle(color: Colors.white,fontSize: 16,fontWeight: FontWeight.bold),),
                       ],
                     ),
                     Text('24-02-2024',style: TextStyle(fontSize: 12,color: Colors.white),),
@@ -62,8 +62,8 @@ class historyPage extends StatelessWidget {
                   children: [
                     Row(
                       children: [
-                        Icon(Icons.attach_money_rounded,color: Colors.white,),
-                        Text("100",style: TextStyle(color: Colors.white,fontSize: 16,fontWeight: FontWeight.bold),),
+                        // Icon(Icons.attach_money_rounded,color: Colors.white,),
+                        Text("₹ 100",style: TextStyle(color: Colors.white,fontSize: 16,fontWeight: FontWeight.bold),),
                       ],
                     ),
                     Text('21-12-2023',style: TextStyle(fontSize: 12,color: Colors.white),),
@@ -75,7 +75,8 @@ class historyPage extends StatelessWidget {
                 ),
               ),
             ),
-          ), Padding(
+          ),
+          Padding(
             padding: const EdgeInsets.all(8.0),
             child: Container(
 
@@ -93,8 +94,8 @@ class historyPage extends StatelessWidget {
                   children: [
                     Row(
                       children: [
-                        Icon(Icons.attach_money_rounded,color: Colors.white,),
-                        Text("5060",style: TextStyle(color: Colors.white,fontSize: 16,fontWeight: FontWeight.bold),),
+                        // Icon(Icons.attach_money_rounded,color: Colors.white,),
+                        Text("₹ 5060",style: TextStyle(color: Colors.white,fontSize: 16,fontWeight: FontWeight.bold),),
                       ],
                     ),
                     Text('21-11-2023',style: TextStyle(fontSize: 12,color: Colors.white),),

@@ -32,7 +32,7 @@ class _QRScannerPageState extends State<QRScannerPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Scan QR on WristBand')),
+      appBar: AppBar(title: const Text('Scan QR on WristBand...',style: TextStyle(fontSize: 20),)),
       body: Column(
         children: <Widget>[
           Row(
@@ -89,13 +89,13 @@ class _QRScannerPageState extends State<QRScannerPage> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: <Widget>[
-                  if (result != null)
-                    Text(
-                      'Barcode Type: ${describeEnum(result!.format)}   Data: ${result!.code}',
-                      style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-                    )
-                  else
-                    const Text('Scan a code'),
+                  // if (result != null)
+                  //   Text(
+                  //     'Barcode Type: ${describeEnum(result!.format)}   Data: ${result!.code}',
+                  //     style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                  //   )
+                  // else
+                  //   const Text('Scan a code'),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.center,
@@ -106,7 +106,8 @@ class _QRScannerPageState extends State<QRScannerPage> {
                           onPressed: () async {
                             await controller?.pauseCamera();
                           },
-                          child: const Text('pause', style: TextStyle(fontSize: 20)),
+                          child: Icon(Icons.pause,size: 20,),
+                          // const Text('pause', style: TextStyle(fontSize: 12)),
                         ),
                       ),
                       Container(
@@ -115,7 +116,8 @@ class _QRScannerPageState extends State<QRScannerPage> {
                           onPressed: () async {
                             await controller?.resumeCamera();
                           },
-                          child: const Text('resume', style: TextStyle(fontSize: 20)),
+                          child: Icon(Icons.play_arrow,size: 20,)
+                          // const Text('resume', style: TextStyle(fontSize: 12)),
                         ),
                       ),
                     ],

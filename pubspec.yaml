@@ -68,6 +68,9 @@ flutter:
   assets:
     - asstes/images/map.jpg
     - asstes/images/appLogo.png
+    - asstes/images/WristListAppLogo.png
+    - asstes/images/GoogleAppLogo.png
+    - asstes/images/BoatLogo.png
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

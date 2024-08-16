@@ -48,15 +48,15 @@ class _appBottomState extends State<appBottom> {
         backgroundColor: appBarColor,
         title: Row(
           children: [
-            Text("WRIST",style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold),),
-            Text("LIST",style: TextStyle(color: Colors.orangeAccent,fontWeight: FontWeight.bold),),
+            Text("WRIST",style: TextStyle(color: Colors.white,fontWeight: FontWeight.w900,fontSize: 25),),
+            Text("LIST",style: TextStyle(color: Colors.yellow,fontWeight: FontWeight.w900,fontSize: 25),),
 
-            SizedBox(width: size.width*0.6,),
-            InkWell(
-              onTap: (){
-                Navigator.push(context,MaterialPageRoute(builder: (context) => profilePage(),));
-              },
-                child: Icon(Icons.person)),
+            // SizedBox(width: size.width*0.6,),
+            // InkWell(
+            //   onTap: (){
+            //     // Navigator.push(context,MaterialPageRoute(builder: (context) => profilePage(),));
+            //   },
+            //     child: Icon(Icons.person)),
           ],
         ),
       ),

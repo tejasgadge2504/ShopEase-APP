@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
-
 import '../request/apiService.dart';
 
 class CartPage extends StatefulWidget {
   final String url;
-
   const CartPage({super.key, required this.url});
 
   @override
@@ -24,7 +22,7 @@ class _CartPageState extends State<CartPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        // title: Text('Cart Page'),
+        title: Text('Cart Page'),
       ),
       body: FutureBuilder<List<Map<String, dynamic>>>(
         future: _products,
@@ -37,16 +35,23 @@ class _CartPageState extends State<CartPage> {
             return Center(child: Text('No products available'));
           } else {
             final products = snapshot.data!;
+
+            // Calculate the total price, ensuring to handle null values
             final totalPrice = products.fold<double>(
               0.0,
-                  (sum, product) => sum + (product['PricePerItem']),
+                  (sum, product) {
+                final pricePerItem = product['Amount'] as num? ?? 0;
+                return sum + pricePerItem.toDouble();
+              },
             );
+
             return Column(
               children: [
                 Padding(
                   padding: const EdgeInsets.all(16.0),
                   child: Text(
-                    'Total Price: \$${totalPrice.toStringAsFixed(2)}',
+                    'Total Price:  ₹ ${totalPrice.toStringAsFixed(2)}',
+
                   ),
                 ),
                 Expanded(
@@ -54,14 +59,21 @@ class _CartPageState extends State<CartPage> {
                     itemCount: products.length,
                     itemBuilder: (context, index) {
                       final product = products[index];
+
                       return ListTile(
-                        title: Text(product['ProductName'] ?? 'Unknown'),
+                        title: Text(product['ProductName'] ?? 'Unknown',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 18),),
                         subtitle: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Text('Price: \$${product['Amount'] ?? 0}, ProductID: ${product['ProductID'] ?? 0}'),
-                            Text('SectionNo. ${product['SectionNo'] ?? 0}- ${product['SectionWard']}')
+                            Text(
+                              'Price:  ₹ ${(product['Amount'] as num? ?? 0).toStringAsFixed(2)}, ProductID: ${product['ProductID'] ?? 'N/A'}',
+                            ),
+                            Text(
+                              'SectionNo. ${product['SectionNo'] ?? 'N/A'} - ${product['SectionWard'] ?? 'N/A'}',
+                            ),
                           ],
                         ),
+
                       );
                     },
                   ),
