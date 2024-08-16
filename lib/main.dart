@@ -1,6 +1,8 @@
+import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:shopease/screens/bottomBar.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:shopease/screens/splashScreen.dart';
 import 'auth/LoginPage.dart';
 import 'firebase_options.dart';
 
@@ -27,7 +29,15 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: appBottom(),
+      home: AnimatedSplashScreen(
+          duration: 3500,
+          splash: 'asstes/SplashVideo.gif',
+          splashIconSize: 2000.0,
+          centered: true,
+          nextScreen: appBottom(),
+          backgroundColor: Colors.white,
+
+      ),
     );
   }
 }
